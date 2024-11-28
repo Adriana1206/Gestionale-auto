@@ -1,0 +1,25 @@
+package com.example.car_project.controller;
+
+import com.example.car_project.model.Auto;
+import com.example.car_project.repository.AutoRepository;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+public class AutoController {
+
+	private final AutoRepository autoRepository;
+	
+	//Costruttore repository
+	public AutoController(AutoRepository autoRepository) {
+		this.autoRepository = autoRepository;
+	}
+	
+	//Endpoint per ottenere tutte le auto
+	@GetMapping("/auto")
+	public List<Auto> getAllAuto(){
+		return autoRepository.findAll();
+	}
+}

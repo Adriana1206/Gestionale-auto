@@ -1,0 +1,27 @@
+package com.example.car_project.controller;
+
+import com.example.car_project.model.Ordine;
+import com.example.car_project.repository.OrdineRepository;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:3000")
+public class OrdineController {
+
+    private final OrdineRepository ordineRepository;
+
+    public OrdineController(OrdineRepository ordineRepository) {
+        this.ordineRepository = ordineRepository;
+    }
+
+    // Endpoint per ottenere tutti gli ordini
+    @GetMapping("/ordini")
+    public List<Ordine> getAllOrdini() {
+        return ordineRepository.findAll();
+    }
+}
