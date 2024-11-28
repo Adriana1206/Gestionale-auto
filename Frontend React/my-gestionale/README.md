@@ -47,6 +47,6 @@ Questo progetto consente di visualizzare, aggiungere, aggiornare e gestire infor
 
 ### Backend (Spring Boot)
 
-1. **Clona il repository del backend**:
+1. **Clona il repository del backend**
    ```bash
    git clone https://github.com/tuo-username/gestionale-auto-backend.git
